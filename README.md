@@ -6,7 +6,9 @@ A jQuery popup plugin. Just shows the content, fully customizable, no default th
 <br />
 ## Installation
 
-Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to import the file with SASS) in your document, e.g.:
+Use [Bower](http://bower.io/) or clone this repo into e.g. `js/prostoPopup` directory.
+
+Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to import the file with SASS) files in your document, e.g.:
 
 ```html
 <link rel="stylesheet" href="js/prostoPopup/_prostoPopoup.css">
