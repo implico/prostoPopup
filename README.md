@@ -3,6 +3,7 @@
 A jQuery popup plugin. Just shows the content, fully customizable, no default theme.
 
 
+<br />
 ## Installation
 
 Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to import the file with SASS) in your document, e.g.:
