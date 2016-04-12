@@ -14,9 +14,9 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
 
 ## Initialization
 
-1. First, create popup markup - must have the `prosto-popup-window` class. An example with a content and close button:
+1. First, create popup markup - must have the `prosto-popup` class. An example with a content and close button:
 ```html
-<div class="prosto-popup-window" id="my-popup">
+<div class="prosto-popup" id="my-popup">
   <a href="#" class="close">&times;</a>
   <div class="content">
     Popup content
@@ -37,7 +37,7 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
 
 3. Optionally, you can add transitions for the popup showing. By default, the popup comes from the top, so set the `top` property transition:
 ```css
-/* notice: only when `.pp-open` class is set */
+/* notice: only when ".pp-open" class is set */
 #my-popup.pp-open {
   /* example 1: the popup comes smoothly from above the viewport */
   -webkit-transition: top 0.7s;
