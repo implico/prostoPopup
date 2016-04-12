@@ -15,52 +15,52 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
 ## Initialization
 
 1. First, create popup markup - must have the `prosto-popup` class. An example with a content and close button:
-```html
-<div class="prosto-popup" id="my-popup">
-  <a href="#" class="close">&times;</a>
-  <div class="content">
-    Popup content
+  ```html
+  <div class="prosto-popup" id="my-popup">
+    <a href="#" class="close">&times;</a>
+    <div class="content">
+      Popup content
+    </div>
   </div>
-</div>
-```
+  ```
 2. In your own CSS, add styles for the popup window, e.g.:
-```css
-#my-popup {
-  width: 500px;
-  max-width: 90%;
-  padding: 20px 20px;
-  background: #fff;
-  box-shadow: 3px 3px 10px #000;
-}
-```
-3. Optionally, you can add transitions for the popup showing. By default, the popup comes from the top, so set the `top` property transition:
-```css
-/* notice: only when ".pp-open" class is set */
-#my-popup.pp-open {
-  /* example 1: the popup comes smoothly from above the viewport */
-  -webkit-transition: top 0.7s;
-    transition: top 0.7s;
+  ```css
+  #my-popup {
+    width: 500px;
+    max-width: 90%;
+    padding: 20px 20px;
+    background: #fff;
+    box-shadow: 3px 3px 10px #000;
+  }
+  ```
+3. Optionally, you can add transitions for the popup showing phase. By default, the popup comes from the top, so set the `top` property transition:
+  ```css
+  /* notice: only when ".pp-open" class is set */
+  #my-popup.pp-open {
+    /* example 1: the popup comes smoothly from above the viewport */
+    -webkit-transition: top 0.7s;
+      transition: top 0.7s;
 
-  /* example 2: same but with a bump effect */
-  -webkit-transition: 0.7s cubic-bezier(0.2, -0.5, 0.2, 1.4);
-    transition: top 0.7s cubic-bezier(0.2, -0.5, 0.2, 1.4);
-}
-```
+    /* example 2: same but with a bump effect */
+    -webkit-transition: 0.7s cubic-bezier(0.2, -0.5, 0.2, 1.4);
+      transition: top 0.7s cubic-bezier(0.2, -0.5, 0.2, 1.4);
+  }
+  ```
 4. Initialize the popup (after the DOM is ready):
-```js
-$(function() {
-  $('#my-popup').prostoPopup({
-    close: '.close'
-    //...other options
+  ```js
+  $(function() {
+    $('#my-popup').prostoPopup({
+      close: '.close'
+      //...other options
+    });
   });
-});
-```
+  ```
 5. Add a handler to show it, e.g.:
-```js
-$('button').click(function() {
-  $('#my-popup').prostoPopup('show');
-});
-```
+  ```js
+  $('button').click(function() {
+    $('#my-popup').prostoPopup('show');
+  });
+  ```
 
 
 ## API
