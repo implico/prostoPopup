@@ -1,0 +1,33 @@
+/* background overlay */
+#prosto-popup-overlay {
+	position: absolute;
+	display: none;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	max-width: 100%;
+	background: #000;
+	opacity: 0;
+}
+
+/* background overlay - visible */
+#prosto-popup-overlay.pp-visible {
+	display: block;
+}
+
+/* popup container */
+.prosto-popup-window {
+	position: absolute;
+	display: none;
+	opacity: 0;
+	left: 0;
+	top: 0;
+	z-index: 10000;
+}
+
+/* popup container - when shown */
+.prosto-popup-window.pp-open {
+	display: block;
+}
