@@ -23,7 +23,6 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
   </div>
 </div>
 ```
-
 2. In your own CSS, add styles for the popup window, e.g.:
 ```css
 #my-popup {
@@ -34,7 +33,6 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
   box-shadow: 3px 3px 10px #000;
 }
 ```
-
 3. Optionally, you can add transitions for the popup showing. By default, the popup comes from the top, so set the `top` property transition:
 ```css
 /* notice: only when ".pp-open" class is set */
@@ -48,7 +46,6 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
     transition: top 0.7s cubic-bezier(0.2, -0.5, 0.2, 1.4);
 }
 ```
-
 4. Initialize the popup (after the DOM is ready):
 ```js
 $(function() {
@@ -58,7 +55,6 @@ $(function() {
   });
 });
 ```
-
 5. Add a handler to show it, e.g.:
 ```js
 $('button').click(function() {
@@ -88,7 +84,7 @@ var defaults = {
   onAfterOpen: null,
   onBeforeClose: null,
   onAfterClose: null,
-  onScrollResize: null,
+  onScrollResize: null
 }
 ```
 
@@ -106,7 +102,7 @@ At the beginning, you can set the default option values applied to all popups:
 #### Individual for a popup
 
 ```js
-  //shows the popup
+  //shows the popup (closing the currently open one if any)
   $('#my-popup').prostoPopup('show');
 
   //hides the popup
@@ -148,16 +144,44 @@ At the beginning, you can set the default option values applied to all popups:
 
 ### Full-screen popup with scrolling
 
+HTML:
+
+```html
+<div class="prosto-popup" id="my-popup">
+  <a href="#" class="close">&times;</a>
+  <div class="content">
+    My content
+  </div>
+</div>
+```
+
 CSS:
 
 ```css
 #my-popup {
   width: 100%;
   height: 100%;
-  overflow: auto;
-  padding: 20px 20px;
+  /* padding for left/right not set to have the scrollbar stick to the right */
+  padding: 40px 0 20px;
   background: #fff;
 }
+
+#my-popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+}
+
+#my-popup .content {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  /* the close button will be always visible */
+  overflow: auto;
+  font-size: 12px;
+}
+
 ```
 
 JavaScript:
