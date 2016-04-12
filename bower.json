@@ -1,0 +1,26 @@
+{
+  "name": "prosto-popup",
+  "description": "A simple jQuery popup plugin",
+  "version": "0.0.1",
+  "main": [
+    "./dist/prostoPopup.js",
+    "./dist/_prostoPopup.css"
+  ],
+  "ignore": [],
+
+  "author": "Bartosz Sak",
+  "license": "MIT",  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/implico/prostoPopup.git"
+  },
+  "keywords": [
+    "popup",
+    "jquery",
+    "responsive"
+  ],
+
+  "dependencies": {
+    "jquery": "*"
+  }
+}
