@@ -15,6 +15,7 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
 ## Initialization
 
 1. First, create popup markup - must have the `prosto-popup` class. An example with a content and close button:
+  
   ```html
   <div class="prosto-popup" id="my-popup">
     <a href="#" class="close">&times;</a>
@@ -24,6 +25,7 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
   </div>
   ```
 2. In your own CSS, add styles for the popup window, e.g.:
+
   ```css
   #my-popup {
     width: 500px;
@@ -34,6 +36,7 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
   }
   ```
 3. Optionally, you can add transitions for the popup showing phase. By default, the popup comes from the top, so set the `top` property transition:
+
   ```css
   /* notice: only when ".pp-open" class is set */
   #my-popup.pp-open {
@@ -47,6 +50,7 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
   }
   ```
 4. Initialize the popup (after the DOM is ready):
+
   ```js
   $(function() {
     $('#my-popup').prostoPopup({
@@ -56,6 +60,7 @@ Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to im
   });
   ```
 5. Add a handler to show it, e.g.:
+
   ```js
   $('button').click(function() {
     $('#my-popup').prostoPopup('show');
