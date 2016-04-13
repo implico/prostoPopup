@@ -125,7 +125,7 @@ At the beginning, you can set the default option values applied to all popups:
   //returns true if popup is open
   $('#my-popup').prostoPopup('isOpen');
 
-  //allows to get/set options (close option will not be updated)
+  //allows to get/set options
   var options = $('#my-popup').prostoPopup('options');
   $('#my-popup').prostoPopup('options', { preventScrolling: false });
 ```

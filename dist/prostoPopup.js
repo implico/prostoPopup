@@ -1,5 +1,5 @@
 /**
- * Prosto Popup
+ * prostoPopup
  * 
  * @author Bartosz Sak <bartosz.sak@gmail.com>
  */
@@ -163,12 +163,18 @@
         
         $this.data('prosto-popup-options', options);
         
+        //close elements
         var closeEl = $overlay;
         if (options.close) {
-          if (options.close instanceof $)
+          if (options.close instanceof $) {
             closeEl = closeEl.add(options.close);
-          else
-            closeEl = closeEl.add($(options.close, $this));
+          }
+          else {
+            $this.on('click', options.close, function(e) {
+              e.preventDefault();
+              $this.prostoPopup('close');
+            });
+          }
         }
         
         closeEl.on('click', function(e) {
@@ -285,7 +291,7 @@
     var ret = false;
     $.each($.fn.prostoPopup._internal.windowRegistry, function() {
       if (this.prostoPopup('isOpen')) {
-        ret = true;
+        ret = this;
         return false;
       }
     });
