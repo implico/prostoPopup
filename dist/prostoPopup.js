@@ -103,6 +103,24 @@
             $this.prostoPopup('close');
             $this.stop(true).removeClass('pp-open').css({ top: '', left: '', opacity: ''});
 
+            //remove from registry
+            try {
+              var windowRegistry = $.fn.prostoPopup._internal.windowRegistry,
+                  regIndex = null;
+              $.each(windowRegistry, function(i) {
+                if (this.get(0) == $this.get(0)) {
+                  regIndex = i;
+                  return false;
+                }
+              });
+              if (regIndex !== null) {
+                delete windowRegistry[regIndex];
+                //reorder elements
+                $.fn.prostoPopup._internal.windowRegistry = $.grep(windowRegistry, function(v) { return typeof v !== 'undefined';});
+              }
+            }
+            catch(ex) {}
+
             var origParent = options._internal.origParent;
             if (origParent)
               $this.detach().appendTo(origParent);
@@ -286,8 +304,8 @@
     $window.trigger('resize.prostoPopup');
   }
   
-  //returns true if any popup is open
-  $.fn.prostoPopup.isOpen = function() {
+  //returns currently open popup jQuery object or false
+  $.fn.prostoPopup.getOpen = function() {
     var ret = false;
     $.each($.fn.prostoPopup._internal.windowRegistry, function() {
       if (this.prostoPopup('isOpen')) {

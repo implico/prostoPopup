@@ -143,8 +143,8 @@ At the beginning, you can set the default option values applied to all popups:
   //refreshes any visible popup
   $.fn.prostoPopup.refresh();
 
-  //returns true if any popup is shown
-  var isOpen = $.fn.prostoPopup.isOpen();
+  //returns currently open popup jQuery object or false
+  var isOpen = $.fn.prostoPopup.getOpen();
 ```
 
 
