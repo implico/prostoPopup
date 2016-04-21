@@ -86,13 +86,13 @@
               
             });
             $this.stop(true).animate({ opacity: 0 }, options.transitionSpeed, function() {
+              $body.css('overflow', '');
+              $body.css('padding-right', '');
               $this.removeClass('pp-open');
+              
               if (options.onAfterClose)
                 options.onAfterClose.call($this);
             });
-            
-            $body.css('overflow', '');
-            $body.css('padding-right', '');
           }
         }
         else if (command == 'refresh') {
