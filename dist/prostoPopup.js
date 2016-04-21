@@ -57,7 +57,7 @@
         
         
         if (command == 'open') {
-          if ($.fn.prostoPopup.isOpen())
+          if ($.fn.prostoPopup.getOpen())
             $.fn.prostoPopup.close();
           
           if (options.onBeforeOpen)
@@ -89,7 +89,7 @@
               $body.css('overflow', '');
               $body.css('padding-right', '');
               $this.removeClass('pp-open');
-              
+
               if (options.onAfterClose)
                 options.onAfterClose.call($this);
             });
