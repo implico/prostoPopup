@@ -63,7 +63,7 @@
           if (options.onBeforeOpen)
             options.onBeforeOpen.call($this);
           
-          $overlay.stop(true).addClass('pp-visible').animate({ opacity: 0.6 }, options.transitionSpeed);
+          $overlay.stop(true).addClass('pp-visible').animate({ opacity: 1 }, options.transitionSpeed);
 
           $this.addClass('pp-open');
           $window.trigger('scroll.prostoPopup', [true]);

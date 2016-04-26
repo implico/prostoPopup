@@ -1,7 +1,7 @@
 {
   "name": "prosto-popup",
   "description": "A simple jQuery popup plugin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": [
     "./dist/prostoPopup.js",
     "./dist/_prostoPopup.css"
