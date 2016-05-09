@@ -80,10 +80,6 @@
             
             $overlay.stop(true).animate({ opacity: 0 }, options.transitionSpeed, function() {
               $(this).removeClass('pp-visible');
-              
-              if (options.onAfterOpen)
-                options.onAfterOpen.call($this);
-              
             });
             $this.stop(true).animate({ opacity: 0 }, options.transitionSpeed, function() {
               $body.css('overflow', '');
