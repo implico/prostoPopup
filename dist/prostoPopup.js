@@ -207,7 +207,8 @@
           
           $.each($.fn.prostoPopup._internal.windowRegistry, function() {
             
-            var $popup = $(this);
+            var $popup = $(this),
+                options = $popup.data('prosto-popup-options');
             
             if ($popup.length && $popup.hasClass('pp-open')) {
               
@@ -230,8 +231,9 @@
               }
               
               if (options.preventScrolling && ((options.preventScrolling == 'force') || (popupHeightTotal < windowHeight))) {
+                var hasScroll = $document.height() > $window.height();
                 $body.css('overflow', 'hidden');
-                if ($document.height() > $window.height()) {
+                if (hasScroll) {
                   $body.css('padding-right', $.fn.prostoPopup._internal.scrollbarWidth + 'px');
                   $overlay.width($document.width());
                 }
@@ -241,9 +243,8 @@
               $popup.css({ left: left + 'px'});
               
               if (!isInit) {
-                var o = $popup.data('prosto-popup-options');
-                if (o.onScrollResize)
-                  o.onScrollResize.call($popup);
+                if (options.onScrollResize)
+                  options.onScrollResize.call($popup);
               }
             }
           });
