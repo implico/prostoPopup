@@ -231,9 +231,8 @@
               }
               
               if (options.preventScrolling && ((options.preventScrolling == 'force') || (popupHeightTotal < windowHeight))) {
-                var hasScroll = $document.height() > $window.height();
                 $body.css('overflow', 'hidden');
-                if (hasScroll) {
+                if ($document.height() > $window.height()) {
                   $body.css('padding-right', $.fn.prostoPopup._internal.scrollbarWidth + 'px');
                   $overlay.width($document.width());
                 }
