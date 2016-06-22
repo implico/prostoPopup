@@ -8,10 +8,10 @@ A jQuery popup plugin. Just shows the content, fully customizable, no default th
 
 Use [Bower](http://bower.io/) or clone this repo into e.g. `js/prostoPopup` directory.
 
-Include the `prostoPopup.js` and `_prostoPopoup.css` (the underline allows to import the file with SASS) files in your document, e.g.:
+Include the `prostoPopup.js` and `prostoPopoup.css` files in your document, e.g.:
 
 ```html
-<link rel="stylesheet" href="js/prostoPopup/_prostoPopoup.css">
+<link rel="stylesheet" href="js/prostoPopup/prostoPopoup.css">
 <script src="js/prostoPopup/prostoPopup.js"></script>
 ```
 
@@ -167,8 +167,11 @@ CSS:
 
 ```css
 #my-popup {
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
   /* padding for left/right not set to have the scrollbar stick to the right */
   padding: 40px 0 20px;
   background: #fff;
