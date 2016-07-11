@@ -66,7 +66,7 @@ Include the `prostoPopup.js` and `prostoPopoup.css` files in your document, e.g.
 
   ```js
   $('button').click(function() {
-    $('#my-popup').prostoPopup('show');
+    $('#my-popup').prostoPopup('open');
   });
   ```
 
@@ -111,10 +111,10 @@ At the beginning, you can set the default option values applied to all popups:
 
 ```js
   //shows the popup (closing the currently open one if any)
-  $('#my-popup').prostoPopup('show');
+  $('#my-popup').prostoPopup('open');
 
   //hides the popup
-  $('#my-popup').prostoPopup('hide');
+  $('#my-popup').prostoPopup('close');
 
   //refreshes position of the popup; automatically triggered on window resize, call it when the popup content changes
   $('#my-popup').prostoPopup('refresh');
@@ -135,7 +135,7 @@ At the beginning, you can set the default option values applied to all popups:
 
 ```js
   //hides any visible popup
-  $.fn.prostoPopup.hide();
+  $.fn.prostoPopup.close();
 
   //removes all popups and deletes overlay element
   $.fn.prostoPopup.destroy();
