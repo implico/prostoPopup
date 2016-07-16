@@ -81,9 +81,11 @@
             $overlay.stop(true).animate({ opacity: 0 }, options.transitionSpeed, function() {
               $(this).removeClass('pp-visible');
             });
+
+            $body.css('overflow', '');
+            $body.css('padding-right', '');
+            
             $this.stop(true).animate({ opacity: 0 }, options.transitionSpeed, function() {
-              $body.css('overflow', '');
-              $body.css('padding-right', '');
               $this.removeClass('pp-open');
 
               if (options.onAfterClose)
