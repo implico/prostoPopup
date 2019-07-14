@@ -10,6 +10,8 @@
   var $document = $(document),
     $window = $(window),
     $body = $('body'),
+    $html = $('html'),
+    $overflowElement = $html.css('overflow') ? $html : $body,
     $overlay = null;
 
 
@@ -82,7 +84,7 @@
               $(this).removeClass('pp-visible');
             });
 
-            $body.css('overflow', '');
+            $overflowElement.css('overflow', '');
             $body.css('padding-right', '');
             
             $this.stop(true).animate({ opacity: 0 }, options.transitionSpeed, function() {
@@ -202,7 +204,8 @@
         
         $window.off('scroll.prostoPopup resize.prostoPopup').on('scroll.prostoPopup resize.prostoPopup', function(ev, isInit) {
           
-          $body.css({ 'overflow': '', 'padding-right': ''});
+          $body.css({ 'padding-right': ''});
+          $overflowElement.css({ 'overflow': '' });
           
           
           $overlay.css({ width: '', height: '' }).width($document.width() + 100).height($document.height());
@@ -233,7 +236,7 @@
               }
               
               if (options.preventScrolling && ((options.preventScrolling == 'force') || (popupHeightTotal < windowHeight))) {
-                $body.css('overflow', 'hidden');
+                $overflowElement.css('overflow', 'hidden');
                 if ($document.height() > $window.height()) {
                   $body.css('padding-right', $.fn.prostoPopup._internal.scrollbarWidth + 'px');
                   $overlay.width($document.width());
