@@ -4,6 +4,7 @@ A jQuery popup plugin. Just shows the content, fully customizable, no default th
 
 
 <br />
+
 ## Installation
 
 Use [Bower](http://bower.io/) or clone this repo into e.g. `js/prostoPopup` directory.
